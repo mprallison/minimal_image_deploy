@@ -3,13 +3,6 @@ services:
     build: .
     ports:
       - "8080:8080"
-    environment:
-      - PORT=8080
-      - GCP_TOKEN=/tmp/keys/auth_files/my_token.json
-      - GCP_CREDS=/tmp/keys/auth_files/my_credentials.json
-      - AWS_CREDS=/tmp/keys/auth_files/aws_creds.yml
-
-    #env file
     env_file:
       - .env
     

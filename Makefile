@@ -4,36 +4,30 @@
 ################## local development ##################
 #######################################################
 
-#as declared in docker-compose
-SERVICE_NAME = <>
-
-#start the application in detached mode
+#compose start container detached mode
 up:
 	docker-compose up -d
 
-#stop the application
+#stop the container
 down:
 	docker-compose down
 
-#rebuild the Docker image
+#rebuild the image
+#server file watches in app/ but need to rebuild other changes
 build:
-	docker-compose build`
+	docker-compose build
 
 #see logs
 logs:
 	docker-compose logs -f
 
-#full restart
-restart: 
-	down up
-
-#clean out volumne
+#clean volumes
 clean:
 	docker-compose down -v
 
 #enter container shell
-exec:
-	docker-compose exec streamlit-app bash
+shell:
+	docker compose exec streamlit-app bash
 
 #######################################################
 ############## deploy on cloud run steps ##############
