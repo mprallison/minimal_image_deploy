@@ -7,4 +7,3 @@ README.md
 docker-compose.yml
 auth_files/
 Makefile
-*.streamlit/
