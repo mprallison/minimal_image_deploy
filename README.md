@@ -1,11 +1,4 @@
 # Readme
-Work for developing automation modules for digital health tasks  
-
-Image auto-image pushed to artifact registry on GCP python-pipe/automate-app  
-Hosted on clud run service at url https://auto-image-356299407178.europe-west1.run.app/  
-
-dev/ for working on new modules  
-
 This repo is setup to move easily from local development to deploying on cloud run  
 Any working files can reside in dev/ and get ignored in build
 Makefile commands support running the streamlit container locally, with ALL relevant files residing in app/  
