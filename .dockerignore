@@ -1,0 +1,11 @@
+.git
+*.ipynb_checkpoints
+*__pycache__
+app/.streamlit/secrets.toml
+dev/
+venv/
+.env
+README.md
+docker-compose.yml
+auth_files/
+Makefile

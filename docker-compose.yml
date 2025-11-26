@@ -1,0 +1,27 @@
+services:
+  streamlit-app:
+    build: .
+    ports:
+      - "8080:8080"
+    environment:
+      - PORT=8080
+      - GCP_TOKEN=/tmp/keys/auth_files/my_token.json
+      - GCP_CREDS=/tmp/keys/auth_files/my_credentials.json
+      - AWS_CREDS=/tmp/keys/auth_files/aws_creds.yml
+
+    #env file
+    env_file:
+      - .env
+    
+    working_dir: /app
+
+   #transient app files as image volumnes
+    volumes:
+      - ./.streamlit/secrets.toml:/.streamlit/secrets.toml:ro
+      - ./auth_files:/tmp/keys/auth_files
+
+      #map current local folder to /app for sync changes
+      #note any changes to environment or container or depencies would require image rebuild
+      - ./app:/app
+
+    command: streamlit run main_page.py --server.port=8080 --server.address=0.0.0.0 --server.fileWatcherType=poll --server.runOnSave=true
