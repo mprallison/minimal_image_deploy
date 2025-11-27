@@ -28,8 +28,8 @@ pull command is in Makefile.
 To deploy container via cloud run:  
 Set up the relevant permissions for the compute engine default service account  
 (Cloud Run Admin, Secret Manager Secret Accessor plus whatever permissions required locally).  
-In cloud run service deploy options set environment variables and mount secrets via GCP secret manager as volumes.  
-Can configure other service settings (CPU, timeout, etc.,).  
+In cloud run service deploy options, set environment variables and mount secrets via GCP secret manager as volumes.  
+Can configure other service settings (CPUs, timeout, etc.,).  
 Deploy.
 
 An alternative is to have environment variables and secrets managed on GCP throughout development.  
@@ -38,4 +38,4 @@ Then can use the same service account to deploy the container direct from CLI.
 
 Can also do continuous deployment via a github repo and github action.
 
-In a real project .env, secrets etc., should be added to .gitignore
+In a real project .env, secrets etc., should be added to .gitignore!
