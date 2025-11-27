@@ -15,7 +15,7 @@ The second half is for building and pushing the image to a GCP artifact registry
 
 Commands authenticate and set permissions for GCP user account and authenticate repository  
 (User and repository only need to be authenticated once).  
-Then build and push the image.  
+Then build and push the image.
 
 This anticipates:  
 A GCP project has been created.  

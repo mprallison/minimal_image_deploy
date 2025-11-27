@@ -33,7 +33,7 @@ shell:
 ############## deploy on cloud run steps ##############
 #######################################################
 
-#GCP artifact registry details
+#GCP project >> artifact registry >> repository >> image details
 GCP_PROJECT_ID = <>
 GCP_REGION = <>
 GCP_REPO_NAME = <>
