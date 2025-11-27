@@ -1,17 +1,17 @@
 # Readme
-A minimal example of developing a web application locally to be deployed as a docker container on GCP cloud run.  
-Example uses streamlit but should be quite interchangeable with flask or node or whatever.  
+A minimal example of developing an image (web application) locally to be deployed as a docker container on GCP cloud run.  
+Example app runs on streamlit but should be quite interchangeable with flask or node or whatever.  
 Docker desktop must be up and running.
 
 Auxiliary working files can reside in dev/ ignored in build.
 
-Secrets and environment variables (dummy examples are .env and auth_files/) should reside outside app/  
+Secrets and environment variables (dummy examples are .env and auth_files/) should reside outside build context (app/).  
 These are configured in docker-compose.yml   
 fileWatcher listens for local changes inside app/  
 Changes outside require container restart.  
 
-The first half of Makefile is local development.  
-The second half is building and pushing the image to a GCP artifact registry repository.
+The first half of Makefile is for local development.  
+The second half is for building and pushing the image to a GCP artifact registry repository.
 
 Commands authenticate and set permissions for GCP user account and authenticate repository  
 (User and repository only need to be authenticated once).  
