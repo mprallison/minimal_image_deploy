@@ -6,7 +6,6 @@ COPY requirements.txt .
 RUN pip install --upgrade pip
 RUN pip install -r requirements.txt
 
-#everything needed for app in local folder app/
 COPY app .
 
 EXPOSE 8080
