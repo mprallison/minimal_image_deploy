@@ -3,10 +3,9 @@ import hmac
 
 #login with password
 def check_password():
-    """Returns `True` if the user had the correct password."""
+    """Returns True if the user inputs correct password."""
 
     def password_entered():
-        """Checks whether a password entered by the user is correct."""
         if hmac.compare_digest(st.session_state["password"], st.secrets["password"]):
             st.session_state["password_correct"] = True
             del st.session_state["password"]
