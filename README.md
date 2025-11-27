@@ -39,4 +39,4 @@ Then can use the same service account to deploy the container direct from CLI.
 
 Can also do continuous deployment via a github repo and github action.
 
-In a real project .env, secrets etc., should be added to .gitignore!
+In a real project, .env, secrets etc., should be added to .gitignore!
