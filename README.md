@@ -1,6 +1,6 @@
 # Readme
-A minimal example of developing an image (web application) locally to be deployed as a docker container on GCP cloud run.  
-Example app runs on streamlit but should be quite interchangeable with flask or node or whatever.  
+A minimal example of developing a (web application) image locally to be deployed as a docker container on GCP cloud run.  
+Example web app runs on streamlit but should be quite interchangeable with flask or node or whatever.  
 Docker desktop must be up and running.
 
 Auxiliary working files can reside in dev/ ignored in build.
