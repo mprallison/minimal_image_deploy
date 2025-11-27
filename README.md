@@ -1,25 +1,39 @@
 # Readme
-This is a minimal example of developing a web application locally to be deployed as a docker container on GCP cloud run.  
-Example uses streamlit but the setup should be quite interchangeable with flask or node or whatever.  
-Docker desktop must already be configured.    
+A minimal example of developing a web application locally to be deployed as a docker container on GCP cloud run.  
+Example uses streamlit but should be quite interchangeable with flask or node or whatever.  
+Docker desktop must be up and running.
 
-Auxiliary working files can reside in dev/ and ignored in build.  
+Auxiliary working files can reside in dev/ ignored in build.
 
 Secrets and environment variables (dummy examples are .env and auth_files/) should reside outside app/  
-fileWatcher listens for local changes inside app/. Changes outside require container restart.
-The first half of Makefile supports local development.  
+These are configured in docker-compose.yml   
+fileWatcher listens for local changes inside app/  
+Changes outside require container restart.  
 
-The second half supports building the image and pushing it to a GCP artifact repository.  
+The first half of Makefile is for local development.  
+The second half is for building and pushing the image to a GCP artifact registry repository.
 
-Depending on your setup I find it simpler to authenticate a GCP user account and artifact repository and build push the image. Make commands do this.  gcloud SDK must already be configured.
+Make commands authenticate and set permissions for GCP user account and authenticate repository.  
+Then builds and pushes the image.  
 
-Then deploy via cloud run service on GCP portal:  
-Set up the relevant permissions for the compute engine default serivce account.  
-In deploy options set environment variables and mount secrets in GCP secret manager as volumes.  
+This anticpates:  
+A GCP project has been created.  
+You are added as a principal with at least Editor role permissions.  
+A repository has been created in artifact registry.  
+Google cloud SDK shell is up and running.
+
+This is all you need to push images to be pulled by other project users.  
+pull command is in Makefile.
+
+To deploy container via cloud run:  
+Set up the relevant permissions for the compute engine default service account  
+(Cloud Run Admin, Secret Manager Secret Accessor plus whatever permissions required locally).  
+In cloud run service deploy options set environment variables and mount secrets via GCP secret manager as volumes.  
 Can configure other service settings (CPU, timeout, etc.,).  
-And deploy.
+Deploy.
 
-An alternative is to have environment variables and secrets all on GCP and authenticate a service account with permissions to access these in local development.  
-The same service account can then be used to deploy the container direct from CLI.  
+An alternative is to have environment variables and secrets managed on GCP throughout development.  
+Authenticate a service account with permissions to access them locally.    
+Then can use the same service account to deploy the container direct from CLI.
 
-Can also set up continuous deployment via a github repo and github action.
+Can also do continuous deployment via a github repo and github action.

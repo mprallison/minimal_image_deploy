@@ -62,3 +62,7 @@ gcp-build:
 	docker build -t $(ARTIFACT_URL) . 
 	docker push $(ARTIFACT_URL)
 	@echo "✅ Successfully pushed to: $(ARTIFACT_URL)"
+
+#pull image from registry
+pull-image:
+	docker pull $(ARTIFACT_URL)
