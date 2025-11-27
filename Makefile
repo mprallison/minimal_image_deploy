@@ -30,7 +30,7 @@ shell:
 	docker compose exec streamlit-app bash
 
 #######################################################
-############## deploy on cloud run steps ##############
+################# deploy on cloud run #################
 #######################################################
 
 #GCP project >> artifact registry >> repository >> image details
@@ -43,7 +43,7 @@ USER = <>
 
 ARTIFACT_URL = $(GCP_REGION)-docker.pkg.dev/$(GCP_PROJECT_ID)/$(GCP_REPO_NAME)/$(IMAGE_NAME):$(TAG)
 
-#requires user account set up on GCP project [python-pipe] and gcloud sdk installed
+#authenticate user
 user-auth:
 	gcloud auth login
 
