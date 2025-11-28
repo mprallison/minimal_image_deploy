@@ -19,7 +19,7 @@ Then build and push the image.
 
 This anticipates:  
 A GCP project has been created.  
-You are added as a principal with at least Editor role permissions.  
+You are added as an IAM principal.
 A repository has been created in artifact registry.  
 Google cloud SDK shell is up and running.
 
