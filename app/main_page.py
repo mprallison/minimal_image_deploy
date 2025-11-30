@@ -2,10 +2,7 @@ import streamlit as st
 import os
 import sys
 
-#append path and import function
-current_dir = os.path.dirname(os.path.abspath(__file__))
-code_dir = os.path.join(current_dir, "code")
-sys.path.append(code_dir)
+sys.path.append("code")
 from maths import squared
 
 #get env variables
