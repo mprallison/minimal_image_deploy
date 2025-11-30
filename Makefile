@@ -1,4 +1,3 @@
-# Use a backslash (\) to split the line for better readability
 .PHONY: up down build logs clean shell user-auth registry-permissions registry-auth gcp-build pull-image
 
 #######################################################
