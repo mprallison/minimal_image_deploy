@@ -13,7 +13,6 @@ down:
 	docker-compose down
 
 #rebuild the image
-#server file watches in app/ but need to rebuild other changes
 build:
 	docker-compose build
 
