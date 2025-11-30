@@ -1,4 +1,5 @@
-.PHONY: up down build logs restart clean
+# Use a backslash (\) to split the line for better readability
+.PHONY: up down build logs clean shell user-auth registry-permissions registry-auth gcp-build pull-image
 
 #######################################################
 ################## local development ##################
@@ -50,8 +51,8 @@ user-auth:
 #user permissions to write image to artifact repo
 registry-permissions:
 	gcloud projects add-iam-policy-binding $(GCP_PROJECT_ID) \
-   --member="user:$(USER)" \
-    --role="roles/artifactregistry.writer"
+	--member="user:$(USER)" \
+	--role="roles/artifactregistry.writer"
 
 #authenticate registry
 registry-auth:
