@@ -12,7 +12,7 @@ up:
 down:
 	docker-compose down
 
-#rebuild the image
+#build the image
 build:
 	docker-compose build
 
