@@ -47,7 +47,7 @@ user-auth:
 	gcloud auth login
 
 #user permissions to write image to artifact repo
-registry-permissions:
+user-permissions:
 	gcloud projects add-iam-policy-binding $(GCP_PROJECT_ID) \
 	--member="user:$(USER)" \
 	--role="roles/artifactregistry.writer"
