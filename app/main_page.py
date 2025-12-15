@@ -1,7 +1,6 @@
 import streamlit as st
 import os
 import sys
-
 sys.path.append("code")
 from maths import squared
 
